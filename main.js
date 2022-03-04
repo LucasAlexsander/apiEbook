@@ -1,5 +1,9 @@
     function getEbookName() {
 
+        if (document.getElementById('ebookList')) {
+            document.getElementById('ebookList').innerHTML = ''
+        }
+
         let search = document.getElementsByTagName('input')[0].value
 
         let url =`https://www.googleapis.com/books/v1/volumes?q=${search}&filter=free-ebooks&maxResults=40&`;
@@ -22,13 +26,23 @@
 
 
                     let divRow = document.createElement('div')
-                    divRow.className = 'row'
+                    divRow.className = 'row tamanho container'
 
-                    let divCol = document.createElement('div')
-                    divCol.className = 'col'
+                    let divColText = document.createElement('div')
+                    divColText.className = 'col-6'
+
+                    let divColImg = document.createElement('div')
+                    divColImg.className = 'col-6 d-flex justify-content-center'
+
+                    let ImageEbook = document.createElement('img')
+                    ImageEbook.src = item.volumeInfo.imageLinks.thumbnail
+                    ImageEbook.className = 'rounded img-thumbnail h-auto'
+
+                    divColImg.appendChild(ImageEbook);
 
                     
-                    divRow.appendChild(divCol)
+                    divRow.appendChild(divColText)
+                    divRow.appendChild(divColImg)
 
                     let p1 = document.createElement('p')
                     p1.innerHTML = '<strong>Title: </strong>' + item.volumeInfo.title
@@ -56,16 +70,14 @@
                     }
 
                     let p5 = document.createElement('p')
-                    p5.innerHTML = `<strong>Link em ${linkTipo} : </strong> <a href= ${link}> Download </a>`
+                    p5.innerHTML = `<strong>Link em ${linkTipo} : </strong> <a href= ${link} target="_blank"> Download </a>`
 
-                    let hr = document.createElement('hr')
 
-                    divCol.appendChild(p1)
-                    divCol.appendChild(p2)
-                    divCol.appendChild(p3)
-                    divCol.appendChild(p4)
-                    divCol.appendChild(p5)
-                    divCol.appendChild(hr)
+                    divColText.appendChild(p1)
+                    divColText.appendChild(p2)
+                    divColText.appendChild(p3)
+                    divColText.appendChild(p4)
+                    divColText.appendChild(p5)
 
                     // E-book capa normal = item.volumeInfo.imageLinks.thumnail
                     // E-book capa pequena = item.volumeInfo.imageLinks.smallThumnail
