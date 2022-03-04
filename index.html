@@ -9,7 +9,7 @@
 
     <style>
         .tamanho{
-            height: 300px;
+            min-height: 300px;
             background: lightgray;
             display: flex;
             align-items: center;
@@ -24,27 +24,53 @@
 
 <body>
 
-    <nav class="navbar navbar-light bg-light mb-4">
+    <!-- <nav class="navbar navbar-light bg-light mb-4">
         <div class="container">
             <div class="navbar-brand mb-0 h1">
                 <h3 class="display-5">Free Book Search App</h3>
             </div>
         </div>
-    </nav>
+    </nav> -->
 
-    <div class="container mt-5">
-        <div class="row form-group mb-5">
-            <div class="col-sm-12">
-                <form class="input-group" action="#">
-                    <input autofocus type="text" class="form-control border-dark" placeholder="Search e-book">
-                    <!-- <button  onclick="getEbookName()" type="button" class="input-form-control btn btn-dark" style="background: grey;">Search</button> -->
-                    <input onclick="getEbookName()" type="submit" class="input-form-control btn btn-dark" style="background: grey;" value="Search">
-                </form>
+    <!-- <header class="bg-light mb-4">
+        <nav class="container navbar navbar-light">
+            <div class="navbar-brand">
+                <h3 class="display-4">Free Book Search App</h3>
             </div>
-        </div>
+        </nav>
+    </header> -->
 
-        <div id="ebookList"></div>
-    </div>
+    <div class="container">
+        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+          <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+            <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+            <span class="fs-4">Free Book Search App</span>
+          </a>
+    
+          <ul class="nav nav-pills">
+            <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
+            <li class="nav-item"><a href="#" class="nav-link disabled">Features</a></li>
+            <li class="nav-item"><a href="#" class="nav-link disabled">FAQs</a></li>
+            <li class="nav-item"><a href="#" class="nav-link disabled">About</a></li>
+          </ul>
+        </header>
+      </div>
+
+
+    <section>
+        <div class="container mt-5">
+            <div class="form-group mb-5">
+                <div class="">
+                    <form class="col-12 input-group">
+                        <input autofocus type="search" aria-label="Search" class="form-control border-dark" placeholder="Search e-book">
+                        <input onclick="getEbookName()" type="submit" class="input-form-control btn btn-dark" style="background: grey;" value="Search">
+                    </form>
+                </div>
+            </div>
+    
+            <div id="ebookList"></div>
+        </div>
+    </section>
 </body>
 
 </html>
