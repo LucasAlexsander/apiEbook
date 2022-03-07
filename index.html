@@ -1,56 +1,23 @@
+<!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
-    <meta charset="utf-8">
-    <title>App Pesquisa Endereço</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <!-- Bootrstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
+    <!-- Meu CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Meu arquivo JavaScript -->
     <script src="main.js"></script>
+    <!-- Icons Font Awesome -->
+    <script src="https://kit.fontawesome.com/5a39bd1d05.js" crossorigin="anonymous"></script>
 
-    <style>
-        .tamanho{
-            min-height: 300px;
-            background: lightgray;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border-bottom: 8px solid whitesmoke;
-            border-radius: 20px;
-            margin-bottom: 15px;
-        }
-    </style>
-
+    <title>App Pesquisa Endereço</title>
 </head>
+<body onscroll="buttonTopo()">
 
-<body>
-
-    <!-- <nav class="navbar navbar-light bg-light mb-4">
-        <div class="container">
-            <div class="navbar-brand mb-0 h1">
-                <h3 class="display-5">Free Book Search App</h3>
-            </div>
-        </div>
-    </nav> -->
-
-
-    <!-- <header class="bg-light mb-4">
-        <nav class="container navbar navbar-light">
-            <div class="navbar-brand">
-                <h3 class="display-4">Free Book Search App</h3>
-
-    <div class="container mt-5">
-        <div class="row form-group mb-5">
-            <div class="col-sm-12">
-                <form class="input-group" action="#">
-                    <input autofocus type="text" class="form-control border-dark" placeholder="Search e-book"> -->
-                    <!-- <button  onclick="getEbookName()" type="button" class="input-form-control btn btn-dark" style="background: grey;">Search</button>
-                    <input onclick="getEbookName()" type="submit" class="input-form-control btn btn-dark" style="background: grey;" value="Search">
-                </form>
-            </div>
-        </nav>
-    </header> -->
-
-    <div class="container">
+    <div id="topo" class="container">
         <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
           <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
             <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
@@ -67,20 +34,25 @@
       </div>
 
 
-    <section>
-        <div class="container mt-5">
+    <section class="">
+        <div id="divTextArea" class="container mt-5">
             <div class="form-group mb-5">
-                <div class="">
-                    <form class="col-12 input-group">
+                    <form class="col-md-12 input-group" action="#">
                         <input autofocus type="search" aria-label="Search" class="form-control border-dark" placeholder="Search e-book">
-                        <input onclick="getEbookName()" type="submit" class="input-form-control btn btn-dark" style="background: grey;" value="Search">
+                        <input id="searchBar" onclick="getEbookName()" type="submit" class="input-form-control btn btn-dark" style="background: grey;" value="Search">
                     </form>
-                </div>
             </div>
     
             <div id="ebookList"></div>
         </div>
     </section>
-</body>
 
+    <!-- Botão para subir a página -->
+    <button id="back-to-top" class="d-none">
+        <a href="#topo">
+            <i class="fa-solid fa-circle-arrow-up fa-2xl"></i>
+        </a>
+    </button>
+    
+</body>
 </html>
